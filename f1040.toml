@@ -1,0 +1,120 @@
+# This will be a toml version of the US income tax return form 1040
+
+Filing_Status = "Married filing jointly"
+FN_MI = "Ketan C"
+LN = "Maheshwari"
+
+[Address]
+    Street = "743 Park Ave"
+    Apt_no = 14
+    City = "Detroit"
+    State = "Michigan"
+    Zip = 12345
+    Foreign_country = ""
+    Foreign_State = ""
+    Foreign_postal = ""
+
+Your_ssn = "334-22-5678"
+Spouse_ssn = "456-78-1990"
+
+Pres_Ele_Camp = "none"
+
+Virtual_Currency = "No"
+
+[Standard_Deduction]
+    claim_you_as_dep = "No"
+    claim_spouse_as_dep = "No"
+    alien_or_sep_return = "No"
+    
+[Age_blindness]
+    born_before_Jan2_1956 = "No"
+    blind = "No"
+    spouse_born_before_Jan2_1956 = "No"
+    Spouse_blind = "No"
+
+[Dependents]
+    [Dep1]
+        FN_LN = "Robert Jones"
+        Ssn = "356-22-7856"
+        Rel = "son"
+        Child_tax_cred = "Yes"
+        Cred_for_other_deps = "No"
+    [Dep2]
+        FN_LN =	"Mary Jones"
+       	Ssn = "326-25-1856"
+       	Rel = "daughter"
+       	Child_tax_cred = "Yes"
+       	Cred_for_other_deps = "No"
+    [Dep3]
+        FN_LN =	""
+       	Ssn = ""
+       	Rel = ""
+       	Child_tax_cred = "" 
+       	Cred_for_other_deps = ""
+    [Dep4]
+        FN_LN =	""
+       	Ssn = ""
+       	Rel = ""
+       	Child_tax_cred = ""
+       	Cred_for_other_deps = "" 
+    
+    more_than_4_deps = "No"
+
+# i = item
+
+[Main]
+    i_1 = ""
+    i_2a = ""
+    i_2b = ""
+    i_3a = ""
+    i_3b = ""
+    i_4a = ""
+    i_4b = ""
+    i_5a = ""
+    i_5b = ""
+    i_6a = ""
+    i_6b = ""
+    i_7 = ""
+    i_8 = ""
+    i_9 = ""
+    i_10a = ""
+    i_10b = ""
+    i_10c = ""
+    i_11 = ""
+    i_12 = ""
+    i_13 = ""
+    i_14 = ""
+    i_15 = ""
+    i_16 = ""
+    i_17 = ""
+    i_18 = ""
+    i_19 = ""
+    i_20 = ""
+    i_21 = ""
+    i_22 = ""
+    i_23 = ""
+    i_24 = ""
+    i_25a = ""
+    i_25b = ""
+    i_25c = ""
+    i_25d = ""
+    i_26 = ""
+    i_27 = ""
+    i_28 = ""
+    i_29 = ""
+    i_30 = ""
+    i_31 = ""
+    i_32 = ""
+    i_33 = ""
+
+[Refund]
+
+[Amount_you_owe]
+
+[Third_party_designee]
+
+[Signature]
+
+[Paid_preparer]
+
+ 
