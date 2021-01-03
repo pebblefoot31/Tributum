@@ -1,0 +1,21 @@
+#This form is for Schedule B - Interest and ordinary Dividends
+
+[Part1_Interest]
+    Payer1 = 0
+    Payer2 = 0
+    Payer3 = 0
+    i2 = 0 # prog.
+    i3 = 0 #excludable interest - form 8815
+    i4 = 0 #prog.
+
+[Part2_Ordinary_Dividends]
+    Payer1 = 0
+    Payer2 = 0
+    Payer3 = 0
+    i6 = 0 #prog.
+
+[Part3_Foreign_Accounts_Trusts]
+    i7a = "No" #foreign bank and financial account
+    i7b = "" #foreign country name
+    i8 = "No" #money from foreign trust - form 3520
+    

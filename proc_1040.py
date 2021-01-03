@@ -19,11 +19,14 @@ def deps(dict_1040):
 
     return dep_count
 
+def proc_sched_B(dict_sched_B):
+    print(dict_sched_B["Part3_Foreign_Accounts_Trusts"]["i7a"])
+
 def start():
     """
     This is the main function.
     """
-    d_1040 = toml.load("f1040.toml")
+    d_1040 = toml.load("f1040.case1.toml")
 
     #print(d_1040)
 
@@ -35,6 +38,9 @@ def start():
 
     print(deps(d_1040))
 
+    if d_1040["Main"]["i2a"] > 0 or d_1040["Main"]["i3a"] > 0:
+        d_sched_B = toml.load("sched_B.case1.toml")
+        proc_sched_B(d_sched_B)
 
 
 if __name__ == "__main__":
