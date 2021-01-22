@@ -20,7 +20,9 @@ def deps(dict_1040):
     return dep_count
 
 def proc_sched_B(dict_sched_B):
-    print(dict_sched_B["Part3_Foreign_Accounts_Trusts"]["i7a"])
+   items = dict_sched_B["Part1_Interest"]["i1"]
+   for i in items:
+        print(i.split("=")[1]) 
 
 def start():
     """
