@@ -10,6 +10,7 @@
     i5 = ["Payer1 = 430", "Payer2 = 200", "Payer3 = 780"]
     i6 = 0 #prog.
 
+#not being processed
 [Part3_Foreign_Accounts_Trusts]
     i7a = "No" #foreign bank and financial account
     i7b = "" #foreign country name
