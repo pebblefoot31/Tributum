@@ -24,19 +24,24 @@ def proc_sched_B(dict_sched_B):
     i2 = 0
     for i in items:
         i2 += int(i.split("=")[1].strip())
-    print(i2)
+    dict_sched_B["Part1_Interest"]["i2"] = i2
+    dict_sched_B["Part1_Interest"]["i3"] = 0
+    dict_sched_B["Part1_Interest"]["i4"] = dict_sched_B["Part1_Interest"]["i2"]-dict_sched_B["Part1_Interest"]["i3"]
 
     items = dict_sched_B["Part2_Ordinary_Dividends"]["i5"]
     i6 = 0
     for i in items:
         i6 += int(i.split("=")[1].strip())
-    print(i6)
+
+    dict_sched_B["Part2_Ordinary_Dividends"]["i6"] = i6
+    
+    return dict_sched_B
 
 def start():
     """
     This is the main function.
     """
-    d_1040 = toml.load("f1040.case1.toml")
+    d_1040 = toml.load("f1040.c1.toml")
 
     #print(d_1040)
 
@@ -46,12 +51,17 @@ def start():
 
     #print(d_1040["Address"]["Street"])
 
-    print(deps(d_1040))
+    #print(deps(d_1040))
 
     if d_1040["Main"]["i2a"] > 0 or d_1040["Main"]["i3a"] > 0:
-        d_sched_B = toml.load("sched_B.case1.toml")
-        proc_sched_B(d_sched_B)
+        d_sched_B = toml.load("sched_B.c1.toml")
+        d_tmp = proc_sched_B(d_sched_B)
 
+    d_sched_B = d_tmp
+    outfile = open("sched_B.c1.processed.toml",'w')
+    toml.dump(d_sched_B, outfile)
+    d_1040["Main"]["i2b"] = d_sched_B["Part1_Interest"]["i4"]
+    print(d_1040["Main"]["i2b"])
 
 if __name__ == "__main__":
 
