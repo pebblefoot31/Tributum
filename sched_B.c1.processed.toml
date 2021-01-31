@@ -1,0 +1,16 @@
+[Part1_Interest]
+i1 = [ "Payer1 = 120", "Payer2 = 300", "Payer3 = 260",]
+i2 = 0
+i3 = 0
+i4 = 680
+i_2 = 680
+
+[Part2_Ordinary_Dividends]
+i5 = [ "Payer1 = 430", "Payer2 = 200", "Payer3 = 780",]
+i6 = 0
+i_6 = 1410
+
+[Part3_Foreign_Accounts_Trusts]
+i7a = "No"
+i7b = ""
+i8 = "No"
