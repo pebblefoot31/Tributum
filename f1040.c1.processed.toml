@@ -1,0 +1,146 @@
+Filing_Status = "Married filing jointly"
+FN_MI = "Ketan C"
+LN = "Maheshwari"
+spouse_FN_MI = "Lee M."
+spouse_LN = "Jones"
+
+[Address]
+Street = "743 Park Ave"
+Apt_no = 14
+City = "Detroit"
+State = "Michigan"
+Zip = 12345
+Foreign_country = ""
+Foreign_State = ""
+Foreign_postal = ""
+Your_ssn = "334-22-5678"
+Spouse_ssn = "456-78-1990"
+Pres_Ele_Camp = "none"
+Virtual_Currency = "No"
+
+[Standard_Deduction]
+claim_you_as_dep = "No"
+claim_spouse_as_dep = "No"
+alien_or_sep_return = "No"
+
+[Age_blindness]
+born_before_Jan2_1956 = "No"
+blind = "No"
+spouse_born_before_Jan2_1956 = "No"
+Spouse_blind = "No"
+
+[Dependents]
+
+[Dep1]
+FN_LN = "Robert Jones"
+Ssn = "356-22-7856"
+Rel = "son"
+Child_tax_cred = "Yes"
+Cred_for_other_deps = "No"
+
+[Dep2]
+FN_LN = "Mary Jones"
+Ssn = "326-25-1856"
+Rel = "daughter"
+Child_tax_cred = "Yes"
+Cred_for_other_deps = "No"
+
+[Dep3]
+FN_LN = ""
+Ssn = ""
+Rel = ""
+Child_tax_cred = ""
+Cred_for_other_deps = ""
+
+[Dep4]
+FN_LN = ""
+Ssn = ""
+Rel = ""
+Child_tax_cred = ""
+Cred_for_other_deps = ""
+more_than_4_deps = "No"
+
+[Main]
+i1 = 80000
+i2a = 500
+i2b = 680
+i3a = 200
+i3b = 100
+i4a = 0
+i4b = 0
+i5a = 0
+i5b = 0
+i6a = 0
+i6b = 0
+i7 = 0
+i8 = 0
+i9 = 80780
+i10a = 0
+i10b = 0
+i10c = 0
+i11 = 80780
+i12 = 24800
+i13 = 0
+i14 = 24800
+i15 = 55980
+i16 = 0
+i17 = 0
+i18 = 0
+i19 = 0
+i20 = 0
+i21 = 0
+i22 = 0
+i23 = 0
+i24 = 0
+i25a = 8000
+i25b = 0
+i25c = 0
+i25d = 0
+i26 = 0
+i27 = 0
+i28 = 0
+i29 = 0
+i30 = 0
+i31 = 0
+i32 = 0
+i33 = 0
+
+[Refund]
+i34 = 0
+i35a = 0
+i35b = 123456789
+i35c = "savings"
+i35d = 12345678911111111
+i36 = 0
+
+[Amount_you_owe]
+i37 = 0
+i38 = 0
+
+[Third_party_designee]
+allow_discussion_with_irs = "No"
+designee_name = ""
+phone_num = "999-999-9999"
+
+[Signature]
+signature = "Yes"
+date = "09/11/2006"
+occupation = "Mechanic"
+IRS_pin = 1111
+spouse_sign = "Yes"
+spouse_sign_date = "09/11/2005"
+spouse_occupation = "Lawyer"
+spouse_IRS_pin = 1112
+phone_no = "222-222-4444"
+email = "hello@gmail.com"
+
+[Paid_preparer]
+prep_name = ""
+prep_sign = "No"
+date = ""
+ptin = ""
+self_employed = ""
+firm_name = ""
+firm_phone_no = ""
+firm_addr = ""
+firm_EIN = ""
