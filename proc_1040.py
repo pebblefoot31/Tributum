@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Programs for processing form 1040
+Program for processing form 1040
 """
 
 import toml
@@ -87,13 +87,13 @@ def start():
                             +d_1040["Main"]["i8"]
     print(d_1040["Main"]["i9"])
 
-#processing line 10 of f1040
+    #processing line 10 of f1040
     d_1040["Main"]["i10c"] = d_1040["Main"]["i10a"] + d_1040["Main"]["i10b"]
 
-#processing line 11 of f1040
+    #processing line 11 of f1040
     d_1040["Main"]["i11"] = d_1040["Main"]["i9"] - d_1040["Main"]["i10c"]
 
-#processing line 12 of f1040
+    #processing line 12 of f1040
     if d_1040["Filing_Status"] == "Single" or\
                                     d_1040["Filing_Status"] == "Married Filing Separately" or\
                                     d_1040["Filing_Status"] == "MFS":
@@ -110,7 +110,7 @@ def start():
 
     print(d_1040["Main"]["i12"])
 
-#processing line 14 and 15 of f1040
+    #processing line 14 and 15 of f1040
     d_1040["Main"]["i14"] = d_1040["Main"]["i12"] + d_1040["Main"]["i13"]
 
     d_1040["Main"]["i15"] = d_1040["Main"]["i11"] - d_1040["Main"]["i14"]
@@ -124,11 +124,11 @@ def start():
 
     #creates and opens new file that we will dump the processed values into in 'write' mode
     outfile = open("f1040.c1.processed.toml",'w')
+    
     #toml.dump is a function that takes arguments in this format: (content, location).
     #It comes with the toml package we installed
     toml.dump(d_1040, outfile)
     outfile.close()#closing processed file
-
 
 
 if __name__ == "__main__":
