@@ -19,6 +19,11 @@ def deps(dict_1040):
 
     return dep_count
 
+#read_tax_table is a "hard function"
+def read_tax_table(income_tax):
+
+    return 6322
+
 def proc_sched_b(dict_sched_b):
     """
     This function processes Part1 Interest and Part2 Ordinary Dividends of the Sched B document.
@@ -57,14 +62,20 @@ def start():
 
     #print(deps(d_1040))
 
+#the 'if' condition determines if we need the file containing schedule B
     if d_1040["Main"]["i2a"] > 0 or d_1040["Main"]["i3a"] > 0:
-        d_sched_b = toml.load("sched_B.c1.toml") #the 'if' condition determines if we need the file containing schedule B
-        d_sched_b = proc_sched_b(d_sched_b) #this line processes sched B file with the function proc_sched_b
-        outfile = open("sched_B.c1.processed.toml",'w')#creates and opens new file that we will dump the processed values into in 'write' mode
-        toml.dump(d_sched_b, outfile)#toml.dump is a function that takes arguments in this format: (content, location). It comes with the toml package we installed
-        outfile.close()#closing processed file 
-        d_1040["Main"]["i2b"] = d_sched_b["Part1_Interest"]["i4"]#updating main 1040 document with the processed values from sched B
-        print(d_1040["Main"]["i2b"])#just to see if the program worked 
+        d_sched_b = toml.load("sched_B.c1.toml")
+         #this line processes sched B file with the function proc_sched_b
+        d_sched_b = proc_sched_b(d_sched_b)
+        #creates and opens new file that we will dump the processed values into in 'write' mode
+        outfile = open("sched_B.c1.processed.toml",'w')
+        #toml.dump is a function that takes arguments in this format: (content, location).
+        #It comes with the toml package we installed
+        toml.dump(d_sched_b, outfile)
+        outfile.close()#closing processed file
+        d_1040["Main"]["i2b"] = d_sched_b["Part1_Interest"]["i4"]
+        #updating main 1040 document with the processed values from sched B
+        print(d_1040["Main"]["i2b"])#just to see if the program worked
 
     d_1040["Main"]["i9"] = d_1040["Main"]["i1"]\
                             +d_1040["Main"]["i2b"]\
@@ -86,12 +97,12 @@ def start():
     if d_1040["Filing_Status"] == "Single" or\
                                     d_1040["Filing_Status"] == "Married Filing Separately" or\
                                     d_1040["Filing_Status"] == "MFS":
-        d_1040["Main"]["i12"] = 12400   
-    
+        d_1040["Main"]["i12"] = 12400
+
     elif d_1040["Filing_Status"] == "Married filing jointly" or\
                                     d_1040["Filing_Status"] == "Qualified widow" or\
                                     d_1040["Filing_Status"] == "QW":
-        d_1040["Main"]["i12"] = 24800    
+        d_1040["Main"]["i12"] = 24800
 
     elif d_1040["Filing_Status"] == "Head of Household" or\
                                     d_1040["Filing_Status"] == "HOH":
@@ -104,11 +115,19 @@ def start():
 
     d_1040["Main"]["i15"] = d_1040["Main"]["i11"] - d_1040["Main"]["i14"]
     if d_1040["Main"]["i15"] <= 0:
-        d_1040["Main"]["i15"] = 0   
+        d_1040["Main"]["i15"] = 0
 
-    outfile = open("f1040.c1.processed.toml",'w')#creates and opens new file that we will dump the processed values into in 'write' mode
-    toml.dump(d_1040, outfile)#toml.dump is a function that takes arguments in this format: (content, location). It comes with the toml package we installed
-    outfile.close()#closing processed file 
+    if d_1040["Main"]["i15"] <= 100000:
+       d_1040["Main"]["i16"] = read_tax_table(d_1040["Main"]["i15"])
+    else:
+        print("To do for income greater than 100k")
+
+    #creates and opens new file that we will dump the processed values into in 'write' mode
+    outfile = open("f1040.c1.processed.toml",'w')
+    #toml.dump is a function that takes arguments in this format: (content, location).
+    #It comes with the toml package we installed
+    toml.dump(d_1040, outfile)
+    outfile.close()#closing processed file
 
 
 
