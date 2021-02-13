@@ -4,6 +4,7 @@ Functions for processing form 1040
 """
 
 import toml
+import csv
 
 def deps(dict_1040):
     """
@@ -21,8 +22,12 @@ def deps(dict_1040):
 
 #read_tax_table is a "hard function"
 def read_tax_table(filing_status, income_tax):
+    with open('tax_table.csv', newline='') as csvfile:
+        tax_table = csv.DictReader(csvfile)
+        for row in tax_table:
+            if int(row['min'])<=income_tax<=int(row['max']):
 
-    return 6322
+                return int(row[filing_status])
 
 def proc_sched_b(dict_sched_b):
     """

@@ -45,7 +45,6 @@ def start():
                             +d_1040["Main"]["i6b"]\
                             +d_1040["Main"]["i7"]\
                             +d_1040["Main"]["i8"]
-    print(d_1040["Main"]["i9"])
 
     #processing line 10 of f1040
     d_1040["Main"]["i10c"] = d_1040["Main"]["i10a"] + d_1040["Main"]["i10b"]
@@ -54,21 +53,16 @@ def start():
     d_1040["Main"]["i11"] = d_1040["Main"]["i9"] - d_1040["Main"]["i10c"]
 
     #processing line 12 of f1040
-    if d_1040["Filing_Status"] == "Single" or\
-                                    d_1040["Filing_Status"] == "Married Filing Separately" or\
+    if d_1040["Filing_Status"] == "S" or\
                                     d_1040["Filing_Status"] == "MFS":
         d_1040["Main"]["i12"] = 12400
 
-    elif d_1040["Filing_Status"] == "Married filing jointly" or\
-                                    d_1040["Filing_Status"] == "Qualified widow" or\
+    elif d_1040["Filing_Status"] == "MFJ" or\
                                     d_1040["Filing_Status"] == "QW":
         d_1040["Main"]["i12"] = 24800
 
-    elif d_1040["Filing_Status"] == "Head of Household" or\
-                                    d_1040["Filing_Status"] == "HOH":
+    elif d_1040["Filing_Status"] == "HOH":
         d_1040["Main"]["i12"] = 18650
-
-    print(d_1040["Main"]["i12"])
 
     #processing line 14 and 15 of f1040
     d_1040["Main"]["i14"] = d_1040["Main"]["i12"] + d_1040["Main"]["i13"]

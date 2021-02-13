@@ -1,6 +1,6 @@
 # This will be a toml version of the US income tax return form 1040
 
-Filing_Status = "Married filing jointly"
+Filing_Status = "MFJ"
 FN_MI = "Ketan C"
 LN = "Maheshwari"
 spouse_FN_MI = "Lee M."
