@@ -76,6 +76,21 @@ def start():
     else:
         print("To do for income greater than 100k")
 
+    d_1040["Main"]["i17"] = 0 #line 3 of schedule 2.
+
+    d_1040["Main"]["i18"] = d_1040["Main"]["i16"] + d_1040["Main"]["i17"]
+    
+    d_1040["Main"]["i19"] = int(utils.deps(d_1040)) * 2000
+    print(d_1040["Main"]["i19"])#for confirmation
+
+    d_1040["Main"]["i20"] = 0 #amount from sched 7 line 3
+
+    d_1040["Main"]["i21"] = d_1040["Main"]["i19"] + d_1040["Main"]["i20"]
+
+    d_1040["Main"]["i22"] = d_1040["Main"]["i18"] - d_1040["Main"]["i21"]
+    if d_1040["Main"]["i22"] <= 0:
+        d_1040["Main"]["i22"] == 0
+
     #creates and opens new file that we will dump the processed values into in 'write' mode
     outfile = open("f1040.c1.processed.toml",'w')
     

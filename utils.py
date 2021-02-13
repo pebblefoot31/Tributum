@@ -22,12 +22,18 @@ def deps(dict_1040):
 
 #read_tax_table is a "hard function"
 def read_tax_table(filing_status, income_tax):
+    """
+    This function determines what a person's tax is based on the range their taxable income falls into and their position as a payer. It involves reading from the IRS-issued Tax Table in the form of a csv file. This function also takes into consideration that a 'Qualified widow(er)' falls into the same category as a person paying 'Married Filing Jointly'.
+    """
+
     with open('tax_table.csv', newline='') as csvfile:
         tax_table = csv.DictReader(csvfile)
         for row in tax_table:
             if int(row['min'])<=income_tax<=int(row['max']):
-
-                return int(row[filing_status])
+                if filing_status == "QW":
+                    return int(row["MFJ"])
+                else:
+                    return int(row[filing_status])
 
 def proc_sched_b(dict_sched_b):
     """
