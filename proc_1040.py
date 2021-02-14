@@ -83,13 +83,43 @@ def start():
     d_1040["Main"]["i19"] = int(utils.deps(d_1040)) * 2000
     print(d_1040["Main"]["i19"])#for confirmation
 
-    d_1040["Main"]["i20"] = 0 #amount from sched 7 line 3
+    #d_1040["Main"]["i20"] = 0 #amount from sched 7 line 3
 
     d_1040["Main"]["i21"] = d_1040["Main"]["i19"] + d_1040["Main"]["i20"]
 
     d_1040["Main"]["i22"] = d_1040["Main"]["i18"] - d_1040["Main"]["i21"]
     if d_1040["Main"]["i22"] <= 0:
         d_1040["Main"]["i22"] == 0
+
+    #d_1040["Main"]["i23"] = 0 
+    d_1040["Main"]["i24"] = d_1040["Main"]["i22"] + d_1040["Main"]["i23"] 
+    d_1040["Main"]["i25a"] = 8637
+    #d_1040["Main"]["i25b"] = 0
+    #d_1040["Main"]["i25c"] = 0
+    d_1040["Main"]["i25d"] = d_1040["Main"]["i25a"]\
+                            +d_1040["Main"]["i25b"]\
+                            +d_1040["Main"]["i25c"]
+
+    #d_1040["Main"]["i26"] = 0
+    #d_1040["Main"]["i27"] = 0
+    #d_1040["Main"]["i28"] = 0
+    #d_1040["Main"]["i29"] = 0 
+    #d_1040["Main"]["i30"] = 0
+    #d_1040["Main"]["i31"] = 0 
+    d_1040["Main"]["i32"] = d_1040["Main"]["i27"]\
+                            +d_1040["Main"]["i28"]\
+                            +d_1040["Main"]["i29"]\
+                            +d_1040["Main"]["i30"]\
+                            +d_1040["Main"]["i31"]
+
+    d_1040["Main"]["i33"] = d_1040["Main"]["i25d"]\
+                            +d_1040["Main"]["i26"]\
+                            +d_1040["Main"]["i23"] 
+
+    if d_1040["Main"]["i33"] > d_1040["Main"]["i24"]:
+        d_1040["Main"]["i34"] = d_1040["Main"]["i33"] - d_1040["Main"]["i24"]
+    else:
+        d_1040["Main"]["i34"] = 0
 
     #creates and opens new file that we will dump the processed values into in 'write' mode
     outfile = open("f1040.c1.processed.toml",'w')
