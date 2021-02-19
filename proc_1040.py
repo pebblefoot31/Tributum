@@ -121,6 +121,9 @@ def start():
     else:
         d_1040["Main"]["i34"] = 0
 
+    d_1040["Amount_you_owe"]["i37"] = d_1040["Main"]["i24"] - d_1040["Main"]["i33"]
+
+
     #creates and opens new file that we will dump the processed values into in 'write' mode
     outfile = open("f1040.c1.processed.toml",'w')
     
